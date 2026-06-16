@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import ComponentButton from './src/components/ComponentButton';
+import ComponentImage from './src/components/ComponentImage';
+import { useState } from 'react';
 
-export default function App() {
+export default function ExercicioDeFixacao() {
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+
+      <ComponentImage />
+     
       <StatusBar style="auto" />
+
+
+      <ComponentButton />
     </View>
   );
 }
@@ -17,4 +26,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  buttons: {
+    alignItems: "center"
+  }
 });
