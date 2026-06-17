@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image} from 'react-native';
 import ComponentButton from './src/components/ComponentButton';
 import ComponentImage from './src/components/ComponentImage';
+import ComponentInput from './src/components/ComponentInput';
+import { TextInput } from 'react-native-web';
 import { useState } from 'react';
 
 export default function ExercicioDeFixacao() {
@@ -9,12 +10,8 @@ export default function ExercicioDeFixacao() {
   return (
     <View style={styles.container}>
 
-      <ComponentImage />
-     
-      <StatusBar style="auto" />
+      <ComponentInput/>
 
-
-      <ComponentButton />
     </View>
   );
 }
@@ -22,7 +19,6 @@ export default function ExercicioDeFixacao() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

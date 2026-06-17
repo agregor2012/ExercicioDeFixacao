@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         gap: 20,
-         padding: 20
+        padding: 20
     },
 
     texto: {
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
     },
 
     container: {
-        padding: 20
+        padding: 20,
     }
 });
