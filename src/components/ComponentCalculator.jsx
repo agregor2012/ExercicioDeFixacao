@@ -1,57 +1,76 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View, Button, Image, Touchable, TouchableOpacity } from 'react-native';
 
 export default function ComponentCalculator() {
+
+    const [numero, setNumero] = useState('');
+
+    function calcular(){
+        let novoNumero = eval(numero);
+        String(novoNumero)
+
+        setNumero(novoNumero)
+    }
+
+    function remover(){
+        let stringSalva = String(numero)
+        stringSalva = stringSalva.slice(0,stringSalva.length-1)
+        setNumero(stringSalva)
+    }
 
     return (
         <View style={styles.containerTouch}>
 
             <View style={styles.containerTouch2}>
-                <TouchableOpacity onPress={() => Alert("Botão Clicado!!!")}>
-
-                    <View style={styles.containerNumbers}>
-
-                        
-                        <View style={styles.containerPainelInterno}>
-                            <Text style={styles.textPainel}>0</Text>
-                        </View>
 
 
-                        <View style={styles.botao}>
-                            <Text style={styles.textoZera}>C</Text>
-                            <Text style={styles.textoZera}>CE</Text>
-                            <Text style={styles.textoOp}>%</Text>
-                            <Text style={styles.textoOp}>/</Text>
-                        </View>
+                <View style={styles.containerNumbers}>
 
-                        <View style={styles.botao}>
-                            <Text style={styles.texto}>7</Text>
-                            <Text style={styles.texto}>8</Text>
-                            <Text style={styles.texto}>9</Text>
-                            <Text style={styles.textoOp}>x</Text>
-                        </View>
 
-                        <View style={styles.botao}>
-                            <Text style={styles.texto}>4</Text>
-                            <Text style={styles.texto}>5</Text>
-                            <Text style={styles.texto}>6</Text>
-                            <Text style={styles.textoOp}>-</Text>
-                        </View>
-
-                        <View style={styles.botao}>
-                            <Text style={styles.texto}>1</Text>
-                            <Text style={styles.texto}>2</Text>
-                            <Text style={styles.texto}>3</Text>
-                            <Text style={styles.textoOp}>+</Text>
-                        </View>
-
-                        <View style={styles.botao}>
-                            <Text style={styles.textoOp}>(  )</Text>
-                            <Text style={styles.texto}>0</Text>
-                            <Text style={styles.texto}>,</Text>
-                            <Text style={styles.textoIgual}>=</Text>
-                        </View>
+                    <View style={styles.containerPainelInterno}>
+                        <Text style={styles.textPainel}>{numero || 0}</Text>
                     </View>
-                </TouchableOpacity>
+
+                    <TouchableOpacity>
+
+                        <View style={styles.botao}>
+                            <Text style={styles.textoZera} onPress={() => setNumero('')}>C</Text>
+                            <Text style={styles.textoZera} onPress={remover}>CE</Text>
+                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '%')}>%</Text>
+                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '/')}>/</Text>
+                        </View>
+
+                        <View style={styles.botao}>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '7')}>7</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '8')}>8</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '9')}>9</Text>
+                            <Text style={styles.textoOp} onPress={() => setNumero(numero + '*')}>x</Text>
+                        </View>
+
+                        <View style={styles.botao}>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '4')}>4</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '5')}>5</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '6')}>6</Text>
+                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '-')}>-</Text>
+                        </View>
+
+                        <View style={styles.botao}>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '1')}>1</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '2')}>2</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '3')}>3</Text>
+                            <Text style={styles.textoOp} onPress={() => setNumero(numero + '+')}>+</Text>
+                        </View>
+
+                        <View style={styles.botao}>
+                            <Text style={styles.textoOp} onPress={() => alert("⚠️O Botão quebrou!!!⚠️")}>⛓️‍💥</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '0')}>0</Text>
+                            <Text style={styles.texto} onPress={() => setNumero(numero + '.')}>.</Text>
+                            <Text style={styles.textoIgual}  onPress={calcular}>=</Text>
+                        </View>
+
+                    </TouchableOpacity>
+
+                </View>
             </View>
         </View>
     );
