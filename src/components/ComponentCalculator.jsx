@@ -36,35 +36,35 @@ export default function ComponentCalculator() {
                         <View style={styles.botao}>
                             <Text style={styles.textoZera} onPress={() => setNumero('')}>C</Text>
                             <Text style={styles.textoZera} onPress={remover}>CE</Text>
-                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '%')}>%</Text>
-                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '/')}>/</Text>
+                            <Text style={styles.textoOp}  onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '%')}}}>%</Text>
+                            <Text style={styles.textoOp}  onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '/')}}}>/</Text>
                         </View>
 
                         <View style={styles.botao}>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '7')}>7</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '8')}>8</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '9')}>9</Text>
-                            <Text style={styles.textoOp} onPress={() => setNumero(numero + '*')}>x</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '7')}}}>7</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '8')}}}>8</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '9')}}}>9</Text>
+                            <Text style={styles.textoOp} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '*')}}}>x</Text>
                         </View>
 
                         <View style={styles.botao}>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '4')}>4</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '5')}>5</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '6')}>6</Text>
-                            <Text style={styles.textoOp}  onPress={() => setNumero(numero + '-')}>-</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '4')}}}>4</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '5')}}}>5</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '6')}}}>6</Text>
+                            <Text style={styles.textoOp}  onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '-')}}}>-</Text>
                         </View>
 
                         <View style={styles.botao}>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '1')}>1</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '2')}>2</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '3')}>3</Text>
-                            <Text style={styles.textoOp} onPress={() => setNumero(numero + '+')}>+</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '1')}}}>1</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '2')}}}>2</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '3')}}}>3</Text>
+                            <Text style={styles.textoOp} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '+')}}}>+</Text>
                         </View>
 
                         <View style={styles.botao}>
                             <Text style={styles.textoOp} onPress={() => alert("⚠️O Botão quebrou!!!⚠️")}>⛓️‍💥</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '0')}>0</Text>
-                            <Text style={styles.texto} onPress={() => setNumero(numero + '.')}>.</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '0')}}}>0</Text>
+                            <Text style={styles.texto} onPress={() =>  {if(numero.length > 21){alert("Operação muito grande, use C/CE para prosseguir!")} else {setNumero(numero + '.')}}}>.</Text>
                             <Text style={styles.textoIgual}  onPress={calcular}>=</Text>
                         </View>
 
